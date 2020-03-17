@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <div style="text-align: center; overflow: hidden;">
+        <h1>{{ date }}</h1>
+        <h1>Post No. {{ post_id }}</h1>
+        <h1>TYPE: {{ result }}</h1>
+        <p>
+
+        </p>
+        <div style="width: 100%;">
+        <h1>{{ power }}</h1>
+        <p>
+            {% for post in posts %}
+            <li>
+                <b>
+                    {{ post.title }}
+                </b>
+                    {{ post.text }}
+                <br>
+                Comments: {{ post.comment_set.count }}
+                {% for comment in post.comment_set.all %}
+                    <br>
+                    {{ comment.text }}
+                {% endfor %}
+        </li>
+            {% endfor %}
+        </p>
+            </div>
+    </div>
+</body>
+</html>

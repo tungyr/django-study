@@ -32,6 +32,7 @@ def post_detail(request, pk):
 def portfolio(request):
     return render(request, 'portfolio/portfolio.html', {})
 
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
